@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "zuperman-7e82"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "zuperman-7e82"
+  template:
+    metadata:
+      labels:
+        app: "zuperman-7e82"
+    spec:
+      containers:
+        - name: "zuperman-7e82"
+          image: "zuperml.azurecr.io/zuperman"
+          ports:
+          - containerPort: 80
